@@ -1,0 +1,7 @@
+iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 8888 -j ACCEPT
+#启动jupyter
+nohup jupyter notebook --allow-root --no-browser --ip=192.168.58.133 > /data/jupyter/jupyter.log 2>&1 &
+#启动docker
+service docker start
+#启动splash
+docker run -p 8050:8050 -p 5023:5023 -d scrapinghub/splash
