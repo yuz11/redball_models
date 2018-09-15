@@ -1,6 +1,8 @@
 iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 8888 -j ACCEPT
 #启动jupyter
 nohup jupyter notebook --allow-root --no-browser --ip=192.168.58.133 > /data/jupyter/jupyter.log 2>&1 &
+#docker安装splash
+http://www.cnblogs.com/yunlongaimeng/p/9500287.html
 #启动docker
 service docker start
 #启动splash
